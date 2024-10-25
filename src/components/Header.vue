@@ -10,7 +10,7 @@
     <h1>CS BAOYAN Deadlines</h1>
     <p>
       计算机保研DDL，
-      <a href="https://github.com/CS-BAOYAN/cs-baoyan-ddl">GitHub链接</a>，
+      <a href="https://github.com/CS-BAOYAN/CS-BAOYAN-DDL">GitHub链接</a>，
       欢迎PR。
     </p>
     <p>

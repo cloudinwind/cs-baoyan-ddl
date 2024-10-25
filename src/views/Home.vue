@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     loadData(source) {
-      fetch('/cs-baoyan-ddl/config/schools.json')
+      fetch('/CS-BAOYAN-DDL/config/schools.json')
       // fetch('/config/schools.json')
         .then(response => response.json())
         .then(data => {
