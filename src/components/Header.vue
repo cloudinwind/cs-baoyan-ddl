@@ -41,7 +41,7 @@ export default {
   name: 'HeaderComponent',
   data() {
     return {
-      selectedSource: 'yutuimian2024',
+      selectedSource: 'camp2025',
       countdownType: 'text'
     };
   },
