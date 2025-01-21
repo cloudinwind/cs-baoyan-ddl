@@ -9,7 +9,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "core-js": "^3.8.3",
+    "element-plus": "^2.9.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
@@ -32,7 +34,8 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
     },
     "rules": {}
   },
