@@ -23,24 +23,27 @@
         </div>
       </div>
     </div>
-    <h1>CS BAOYAN Deadlines</h1>
-    <p>
-      计算机保研DDL，
-      <a href="https://github.com/CS-BAOYAN/CS-BAOYAN-DDL">GitHub链接</a>，
-      欢迎PR。
-    </p>
-    <p>
-      <strong>声明:</strong> 本网站排序使用时间+字典序排序，DDL均为人为收集，起到参考作用，如有错误不承担任何责任。
-    </p>
-    <p>
-      全部DDL的显示使用 Asia/Shanghai 时间。一切20XX年XX月XX日截至的夏令营/预推免，在DDL中均显示为20XX年XX月XX+1日零点。
-    </p>
-    <p>
-      <u>院校 Tags 的筛选</u>使用<strong>或逻辑</strong>。<u>开营 Tags 的筛选</u>与<u>院校 Tags 的结果</u><strong>共同构成且逻辑</strong>。
-    </p>
-    <p>
-      <strong>2024 夏令营信息已经暂时停止更新，2024 预推免信息开始保持与绿群 Github 仓库同步</strong>。
-    </p>
+    <div class="intro">
+
+      <h1>CS BAOYAN Deadlines</h1>
+      <p>
+        计算机保研DDL，
+        <a href="https://github.com/CS-BAOYAN/CS-BAOYAN-DDL">GitHub链接</a>，
+        欢迎PR。
+      </p>
+      <p>
+        <strong>声明:</strong> 本网站排序使用时间+字典序排序，DDL均为人为收集，起到参考作用，如有错误不承担任何责任。
+      </p>
+      <p>
+        全部DDL的显示使用 Asia/Shanghai 时间。一切20XX年XX月XX日截至的夏令营/预推免，在DDL中均显示为20XX年XX月XX+1日零点。
+      </p>
+      <p>
+        <u>院校 Tags 的筛选</u>使用<strong>或逻辑</strong>。<u>开营 Tags 的筛选</u>与<u>院校 Tags 的结果</u><strong>共同构成且逻辑</strong>。
+      </p>
+      <p>
+        <strong>2024 夏令营信息已经暂时停止更新，2024 预推免信息开始保持与绿群 Github 仓库同步</strong>。
+      </p>
+    </div>
   </header>
   <div id="dropdown-container">
     <label for="source-select">选择数据源:</label>
@@ -184,7 +187,7 @@ header {
   padding: 0.5em 2em;
   box-sizing: border-box;
   transition: background-color var(--transition-duration) ease,
-  color var(--transition-duration) ease;
+    color var(--transition-duration) ease;
 }
 
 .navbar h3 {
@@ -212,5 +215,12 @@ header {
 
 .navbar.dark {
   background-color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+  .intro{
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
 }
 </style>
