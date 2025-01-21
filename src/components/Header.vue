@@ -89,6 +89,10 @@ export default {
       }
     },
   },
+  mounted() {
+    this.theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    localStorage.setItem('theme', this.theme);
+  },
 };
 </script>
 

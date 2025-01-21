@@ -27,23 +27,4 @@ export default {
 </script>
 
 <style>
-.app.light {
-  background-color: #f4f4f9;
-  color: black;
-}
-
-.app.dark {
-  background-color: #282828;
-  color: #f4f4f9;
-}
-
-h1, h2, h3, p {
-  color: inherit;
-}
-
-/* 你可以根据需要调整其他元素 */
-a {
-  color: #bb86fc;
-  text-decoration: none;
-}
 </style>
