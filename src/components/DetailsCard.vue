@@ -109,6 +109,7 @@ export default {
   z-index: 1000;
   border-radius: 15px;
   pointer-events: auto;
+  color: black;
 }
 
 .details-card a {

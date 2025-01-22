@@ -4,7 +4,7 @@
       <circle class="progress-ring__circle-bg" cx="50" cy="50" r="40"></circle>
       <circle class="progress-ring__circle" :stroke-dasharray="circumference" :stroke-dashoffset="offset" cx="50" cy="50" r="40"></circle>
     </svg>
-    <div class="progress-ring__label">{{ labelName }}</div>
+    <div class="progress-ring__label" style="color: black;">{{ labelName }}</div>
   </div>
 </template>
 

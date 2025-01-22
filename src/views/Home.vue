@@ -2,9 +2,11 @@
   <div class="container">
     <div :class="{ 'blur-background': selectedSchool }">
       <HeaderComponent @source-change="onSourceChange" @toggle-countdown="onToggleCountdown"></HeaderComponent>
-      <FiltersComponent @filter-change="onFilterChange"></FiltersComponent>
-      <SearchComponent @search="onSearch"></SearchComponent>
-      <SchoolList :schools="schools" :selectedFilters="selectedFilters" :searchQuery="searchQuery" :countdownType="countdownType" @show-details="showDetails"></SchoolList>
+      <div class="main-container">
+        <FiltersComponent @filter-change="onFilterChange"></FiltersComponent>
+        <SearchComponent @search="onSearch"></SearchComponent>
+        <SchoolList :schools="schools" :selectedFilters="selectedFilters" :searchQuery="searchQuery" :countdownType="countdownType" @show-details="showDetails"></SchoolList>
+      </div>
     </div>
     <div v-if="selectedSchool" class="overlay" @click="hideDetails"></div>
     <DetailsCard v-if="selectedSchool" :school="selectedSchool" :countdownType="countdownType"></DetailsCard>
@@ -89,9 +91,9 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* padding: 20px; */
   position: relative;
 }
 
@@ -109,5 +111,15 @@ export default {
   background: transparent;
   z-index: 999;
   pointer-events: auto;
+}
+
+.main-container{
+  padding: 0 18%;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container{
+    padding: 0 5%;
+  }
 }
 </style>
