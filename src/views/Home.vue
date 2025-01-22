@@ -41,8 +41,8 @@ export default {
   },
   methods: {
     loadData(source) {
-      // fetch('/CS-BAOYAN-DDL/config/schools.json')
-      fetch('/config/schools.json')
+      fetch('/CS-BAOYAN-DDL/config/schools.json')
+      // fetch('/config/schools.json')
         .then(response => response.json())
         .then(data => {
           this.schools = data[source];
