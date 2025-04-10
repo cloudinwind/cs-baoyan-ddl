@@ -19,6 +19,7 @@ jobs:
     - name: Copy and rename data.json to public/config/schools.json
       run: |
         cp BoardCaster/data.json public/config/schools.json
+        curl https://api.vercel.com/v1/integrations/deploy/prj_zfKLDx8EbnLqKBsbq0IK5u72PMTQ/f57h5ODBMh
 
     - name: Commit and push changes if there are any
       run: |
