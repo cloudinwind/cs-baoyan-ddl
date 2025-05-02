@@ -139,6 +139,46 @@
             "tags": [
                 "港三"
             ]
+        },
+        {
+            "name": "南方科技大学",
+            "institute": "系统设计与智能制造学院",
+            "description": "_No response_",
+            "deadline": "2025-06-16T23:00:00+08:00",
+            "website": "https://sdim.sustech.edu.cn/index/show?id=464",
+            "tags": [
+                "双非"
+            ]
+        },
+        {
+            "name": "西湖大学",
+            "institute": "工学院",
+            "description": "https://engineering.westlake.edu.cn/NewsEvents/LatestNews/202504/t20250430_55211.shtml",
+            "deadline": "2025-06-26T10:00:00+08:00",
+            "website": "https://engineering.westlake.edu.cn/NewsEvents/LatestNews/202504/t20250430_55211.shtml",
+            "tags": [
+                "四非"
+            ]
+        },
+        {
+            "name": "北京大学",
+            "institute": "工学院",
+            "description": "_No response_",
+            "deadline": "2025-06-05T08:30:00+08:00",
+            "website": "https://www.coe.pku.edu.cn/graduate/13490.html",
+            "tags": [
+                "TOP2"
+            ]
+        },
+        {
+            "name": "上海交通大学",
+            "institute": "密西根学院",
+            "description": "_No response_",
+            "deadline": "2025-06-23T00:00:00+08:00",
+            "website": "https://www.ji.sjtu.edu.cn/cn/prospective-students-zh/2025-04-25/153326/",
+            "tags": [
+                "华五"
+            ]
         }
     ],
     "camp2024": [
