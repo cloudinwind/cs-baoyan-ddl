@@ -189,6 +189,27 @@
             "tags": [
                 "华五"
             ]
+        },
+        {
+            "name": "哈尔滨工业大学",
+            "institute": "计算学部",
+            "description": "_No response_",
+            "deadline": "2025-06-08T00:00:00+08:00",
+            "website": "http://computing.hit.edu.cn/2025/0507/c11271a369599/pagem.htm",
+            "tags": [
+                "C9",
+                "985"
+            ]
+        },
+        {
+            "name": "上海科技大学",
+            "institute": "信息科学与技术学院",
+            "description": "_No response_",
+            "deadline": "N/A",
+            "website": "https://sist.shanghaitech.edu.cn/2025/0507/c2863a1110700/page.htm",
+            "tags": [
+                "双非"
+            ]
         }
     ],
     "camp2024": [
