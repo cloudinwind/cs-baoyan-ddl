@@ -91,15 +91,16 @@ export default {
 
 <style scoped>
 .container {
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
-  /* padding: 20px; */
   position: relative;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
 }
 
 .blur-background {
-  filter: blur(10px);
+  filter: blur(8px);
   pointer-events: none;
+  transition: var(--transition);
 }
 
 .overlay {
@@ -108,18 +109,66 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
   z-index: 999;
-  pointer-events: auto;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
 }
 
-.main-container{
-  padding: 0 18%;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-container {
+  padding: 2rem 18%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .main-container {
+    padding: 2rem 10%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-container {
+    padding: 2rem 5%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .main-container{
-    padding: 0 5%;
+  .main-container {
+    padding: 1rem 5%;
+    gap: 1rem;
   }
 }
+
+/* 添加滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
 </style>
+

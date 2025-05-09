@@ -29,31 +29,84 @@ export default {
 .search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.search-container:focus-within {
+  box-shadow: 0 0 0 2px var(--primary-color);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .search-input {
-  padding: 10px;
-  font-size: 16px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
   width: 300px;
   max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.search-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
 }
 
 .clear-search {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .clear-search:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-color);
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.clear-search:active {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .clear-search {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>

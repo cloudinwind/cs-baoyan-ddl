@@ -1,20 +1,24 @@
 <template>
   <div id="school-list">
     <div v-for="school in filteredSchools" :key="school.id" :class="['school', school.timeRemaining === Infinity ? 'red' : 'green']" @click="showDetails(school)">
-      <div>
-        <h2>{{ school.name }} {{ school.institute }}</h2>
-        <p>{{ school.description }}</p>
+      <div class="school-header">
+        <h2>{{ school.name }} <span class="institute">{{ school.institute }}</span></h2>
+      </div>
+      <div class="school-content">
+        <p class="description">{{ school.description }}</p>
         <p><strong>日期:</strong> {{ school.date }}</p>
-        <p><strong>网址:</strong> <a :href="school.website" target="_blank">{{ school.website }}</a></p>
+        <p><strong>网址:</strong> <a :href="school.website" target="_blank" @click.stop>{{ school.website }}</a></p>
         <div class="tags">
           <span v-for="tag in school.tags" :key="tag" :style="{color: hashColor(tag), borderColor: hashColor(tag)}">{{ tag }}</span>
         </div>
       </div>
-      <div class="progress-container" v-if="countdownType === 'ring'">
-        <ProgressRing v-for="(progress, label) in school.progress" :key="label" :label="label" :progress="progress" :num="school.times[label]"></ProgressRing>
-      </div>
-      <div class="text-countdown" v-else>
-        {{ school.countdown }}
+      <div class="school-footer">
+        <div class="progress-container" v-if="countdownType === 'ring'">
+          <ProgressRing v-for="(progress, label) in school.progress" :key="label" :label="label" :progress="progress" :num="school.times[label]"></ProgressRing>
+        </div>
+        <div class="text-countdown" v-else>
+          {{ school.countdown }}
+        </div>
       </div>
     </div>
   </div>
@@ -123,86 +127,191 @@ export default {
 </script>
 
 <style scoped>
-.school {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#school-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
-.school:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.school {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 0.8rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Dark mode styles */
+.dark-mode #school-list .school {
+  background: rgba(30, 30, 35, 0.9);
+  border-color: rgba(70, 70, 80, 0.5);
+}
+
+.dark-mode #school-list .school.green {
+  background: linear-gradient(135deg, rgba(30, 60, 40, 0.9), rgba(30, 30, 35, 0.9));
+}
+
+.dark-mode #school-list .school.red {
+  background: linear-gradient(135deg, rgba(60, 30, 30, 0.9), rgba(30, 30, 35, 0.9));
+}
+
+.dark-mode #school-list .progress-container,
+.dark-mode #school-list .text-countdown {
+  background: rgba(40, 40, 50, 0.7);
+}
+
+.dark-mode #school-list .tags span {
+  background: rgba(40, 40, 50, 0.8);
+  border-color: rgba(70, 70, 80, 0.7);
+}
+
+.school-header {
+  margin-bottom: 0.5rem;
 }
 
 .school h2 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #333;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.institute {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.school-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.description {
+  max-height: 2.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .school p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #666;
+  margin: 0.3rem 0;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  line-height: 1.4;
 }
 
 .school a {
-  color: #007bff;
+  color: var(--primary-color);
   word-break: break-all;
   text-decoration: none;
+  transition: var(--transition);
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.school a:hover {
-  text-decoration: underline;
+.school-footer {
+  margin-top: 0.6rem;
+  align-self: stretch;
 }
 
 .school .tags {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  max-height: 3.5rem;
+  overflow: hidden;
 }
 
 .school .tags span {
-  background: #f4f4f9;
-  border-radius: 3px;
-  padding: 5px 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid;
+  white-space: nowrap;
 }
 
 .progress-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 
 .text-countdown {
-  font-size: 18px;
-  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  text-align: center;
 }
 
 .school.green {
-  background-color: #e6ffed;
+  background: linear-gradient(135deg, rgba(230, 255, 237, 0.9), rgba(255, 255, 255, 0.9));
 }
 
 .school.red {
-  background-color: #ffe6e6;
+  background: linear-gradient(135deg, rgba(255, 230, 230, 0.9), rgba(255, 255, 255, 0.9));
 }
 
-@media screen and (max-width: 768px) {
-  .school {
-    flex-direction: column;
-  }
+.school:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-color);
+}
 
-  .progress-container {
-    flex-wrap: wrap;
+@media screen and (max-width: 1200px) {
+  .school h2 {
+    font-size: 0.95rem;
+  }
+  
+  .institute {
+    font-size: 0.8rem;
+  }
+  
+  .school p {
+    font-size: 0.8rem;
+  }
+  
+  .text-countdown {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #school-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 </style>

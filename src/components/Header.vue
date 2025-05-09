@@ -24,7 +24,6 @@
       </div>
     </div>
     <div class="intro">
-
       <h1>CS BAOYAN Deadlines</h1>
       <p>
         计算机保研DDL，
@@ -100,87 +99,6 @@ export default {
 header {
   margin-bottom: 2em;
   text-align: center;
-  /* position: relative; */
-}
-
-.toggle-switch {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  background-color: #ddd;
-  width: 60px;
-  height: 30px;
-  border-radius: 15px;
-  position: relative;
-  transition: background-color 0.3s;
-}
-
-.toggle-switch-text {
-  background-color: #4CAF50;
-  /* 文模式的背景色 */
-}
-
-.toggle-knob {
-  width: 28px;
-  height: 28px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  transition: all 0.3s;
-}
-
-.toggle-knob-text {
-  transform: translateX(30px);
-}
-
-.toggle-label {
-  font-size: 14px;
-  color: #666;
-  user-select: none;
-  width: 50%;
-  text-align: center;
-}
-
-#dropdown-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2em;
-  /* position: absolute; */
-  /* top: 10px; */
-  /* right: 10px; */
-}
-
-#source-select {
-  padding: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-@media screen and (max-width: 768px) {
-  #dropdown-container {
-    position: static;
-    /* 取消绝对定位 */
-    margin-top: 10px;
-    /* 增加顶部外边距 */
-    justify-content: center;
-    /* 居中对齐 */
-  }
-
-  #toggle-container {
-    position: static;
-    /* 取消绝对定位 */
-    margin-top: 10px;
-    /* 增加顶部外边距 */
-    justify-content: center;
-    /* 居中对齐 */
-  }
 }
 
 .navbar {
@@ -190,41 +108,217 @@ header {
   align-items: center;
   padding: 0.5em 2em;
   box-sizing: border-box;
-  transition: background-color var(--transition-duration) ease,
-    color var(--transition-duration) ease;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar h3 {
   padding: 0;
   margin: 0;
   font-size: 1.8em;
+  font-weight: 600;
+  background: linear-gradient(45deg, var(--primary-color), #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar.light {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--text-color);
+}
+
+.navbar.dark {
+  background-color: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--text-color);
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--border-color);
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  transition: var(--transition);
+  margin: 0 1rem;
+}
+
+.toggle-switch-text {
+  background-color: var(--success-color);
+}
+
+.toggle-knob {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-knob-text {
+  transform: translateX(30px);
+}
+
+.toggle-label {
+  font-size: 14px;
+  color: var(--text-color);
+  user-select: none;
+  width: 50%;
+  text-align: center;
+  font-weight: 500;
+}
+
+#dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 1.5em;
+  padding: 0.7em;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  border: 1px solid var(--border-color);
+}
+
+#source-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#source-select:hover {
+  border-color: var(--primary-color);
+}
+
+#source-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto 1.5em;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.intro h1 {
+  font-size: 1.8em;
+  margin: 0;
+  padding: 1em;
+  color: var(--text-color);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intro p {
+  margin: 0;
+  padding: 0.8em 1.5em;
+  line-height: 1.5;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.intro p:last-child {
+  border-bottom: none;
+}
+
+.intro a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.intro a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode styles for intro */
+.dark-mode .intro {
+  background: rgba(30, 30, 35, 0.8);
+  border-color: rgba(70, 70, 80, 0.5);
+}
+
+.dark-mode .intro h1 {
+  background: rgba(40, 40, 50, 0.5);
+  border-color: rgba(70, 70, 80, 0.5);
+}
+
+.dark-mode .intro p {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.darkmode-switch {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.darkmode-switch:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode style for dropdown */
+.dark-mode #dropdown-container {
+  background: rgba(30, 30, 35, 0.8);
+  border-color: rgba(70, 70, 80, 0.5);
 }
 
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
+    padding: 1em;
   }
 
   .navbar h3 {
-    padding: 0;
-    margin: 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
   }
-}
 
-.navbar.light {
-  background-color: #d8f1eb;
-  color: black;
-}
+  .intro {
+    padding: 1em;
+    margin: 0 1em;
+  }
 
-.navbar.dark {
-  background-color: #1a1a1a;
-}
+  .intro h1 {
+    font-size: 2em;
+  }
 
-@media screen and (max-width: 768px) {
-  .intro{
-    padding: 0 5%;
-    box-sizing: border-box;
+  #dropdown-container {
+    flex-direction: column;
+    width: 90%;
+    margin: 1em auto;
+  }
+
+  #source-select {
+    width: 100%;
   }
 }
 </style>
