@@ -64,12 +64,17 @@ body {
 /* Dark mode styles */
 .dark-mode {
   --primary-color: #64b5f6;
-  --secondary-color: #1a1a1a;
+  --secondary-color: #121212;
   --text-color: #ffffff;
   --border-color: #2c2c2c;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
-.dark-mode body,
+.dark-mode body {
+  background-color: #121212;
+  color: var(--text-color);
+}
+
 .dark-mode .wrapper {
   background-color: #121212;
 }
@@ -81,6 +86,11 @@ body {
   box-shadow: var(--shadow);
   padding: 20px;
   transition: var(--transition);
+}
+
+.dark-mode .card {
+  background: #1e1e23;
+  border-color: var(--border-color);
 }
 
 .btn {

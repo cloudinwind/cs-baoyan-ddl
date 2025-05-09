@@ -2,6 +2,12 @@
   <div id="school-list">
     <div v-for="school in filteredSchools" :key="school.id" :class="['school', school.timeRemaining === Infinity ? 'red' : 'green']" @click="showDetails(school)">
       <div class="school-header">
+        <div class="school-logo">
+          <img v-if="getSchoolLogoUrl(school.name)" :src="getSchoolLogoUrl(school.name)" :alt="school.name + ' logo'" />
+          <div v-else class="school-logo-placeholder">
+            {{ getInitials(school.name) }}
+          </div>
+        </div>
         <h2>{{ school.name }} <span class="institute">{{ school.institute }}</span></h2>
       </div>
       <div class="school-content">
@@ -26,6 +32,8 @@
 
 <script>
 import ProgressRing from './ProgressRing.vue';
+import { getSchoolLogo } from '../utils/schoolLogos';
+import provincesData from '../../province.js';
 
 export default {
   components: {
@@ -34,14 +42,78 @@ export default {
   props: {
     schools: Array,
     selectedFilters: Array,
+    selectedProvinces: Array,
     searchQuery: String,
     countdownType: String
+  },
+  data() {
+    return {
+      provinceSchoolsMap: this.mapProvinceToSchools()
+    };
+  },
+  methods: {
+    mapProvinceToSchools() {
+      // 将省份数据映射为查找表
+      const provinceMap = {};
+      if (Array.isArray(provincesData) && provincesData.length > 0) {
+        for (const provinceObj of provincesData) {
+          for (const [province, schools] of Object.entries(provinceObj)) {
+            provinceMap[province] = schools;
+          }
+        }
+      }
+      return provinceMap;
+    },
+    isSchoolInProvince(schoolName, province) {
+      const provinceSchools = this.provinceSchoolsMap[province] || [];
+      return provinceSchools.some(name => 
+        schoolName.includes(name) || name.includes(schoolName)
+      );
+    },
+    formatDate(date) {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      };
+      return new Intl.DateTimeFormat('zh-CN', options).format(date);
+    },
+    hashColor(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      const color = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+      return "#" + "00000".substring(0, 6 - color.length) + color;
+    },
+    showDetails(school) {
+      this.$emit('show-details', school);
+    },
+    getSchoolLogoUrl(schoolName) {
+      return getSchoolLogo(schoolName);
+    },
+    getInitials(name) {
+      // 获取学校名称的首字母或前两个字
+      if (!name) return '?';
+      
+      // 如果是中文，取前两个字
+      if (/[\u4e00-\u9fa5]/.test(name)) {
+        return name.substring(0, 2);
+      }
+      
+      // 否则提取首字母
+      return name.split(/\s+/).map(word => word.charAt(0)).join('').toUpperCase();
+    }
   },
   computed: {
     filteredSchools() {
       const now = new Date();
       return this.schools
         .filter(school => {
+          // 标签筛选
           const hasStartedTag = this.selectedFilters.includes('已开营');
           const hasEndedTag = this.selectedFilters.includes('已结营');
           
@@ -51,10 +123,18 @@ export default {
           const otherTags = this.selectedFilters.filter(tag => tag !== '已开营' && tag !== '已结营');
           const matchesOtherTags = otherTags.length === 0 || otherTags.some(tag => school.tags.includes(tag));
 
-          const matchesTags = matchesStartedTag && matchesEndedTag && matchesOtherTags;
-          const matchesSearch = this.searchQuery === '' || school.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || school.institute.toLowerCase().includes(this.searchQuery.toLowerCase());
+          // 搜索筛选
+          const matchesSearch = this.searchQuery === '' || 
+                               school.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                               school.institute.toLowerCase().includes(this.searchQuery.toLowerCase());
+          
+          // 省份筛选
+          const matchesProvinces = this.selectedProvinces.length === 0 || 
+                                  this.selectedProvinces.some(province => 
+                                    this.isSchoolInProvince(school.name, province)
+                                  );
 
-          return matchesTags && matchesSearch;
+          return matchesStartedTag && matchesEndedTag && matchesOtherTags && matchesSearch && matchesProvinces;
         })
         .map(school => {
           if (school.deadline !== 'N/A' && school.deadline !== '') {
@@ -98,30 +178,6 @@ export default {
           return a.timeRemaining - b.timeRemaining;
         });
     }
-  },
-  methods: {
-    formatDate(date) {
-      const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      };
-      return new Intl.DateTimeFormat('zh-CN', options).format(date);
-    },
-    hashColor(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      const color = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-      return "#" + "00000".substring(0, 6 - color.length) + color;
-    },
-    showDetails(school) {
-      this.$emit('show-details', school);
-    }
   }
 };
 </script>
@@ -149,32 +205,41 @@ export default {
   overflow: hidden;
 }
 
-/* Dark mode styles */
-.dark-mode #school-list .school {
-  background: rgba(30, 30, 35, 0.9);
-  border-color: rgba(70, 70, 80, 0.5);
-}
-
-.dark-mode #school-list .school.green {
-  background: linear-gradient(135deg, rgba(30, 60, 40, 0.9), rgba(30, 30, 35, 0.9));
-}
-
-.dark-mode #school-list .school.red {
-  background: linear-gradient(135deg, rgba(60, 30, 30, 0.9), rgba(30, 30, 35, 0.9));
-}
-
-.dark-mode #school-list .progress-container,
-.dark-mode #school-list .text-countdown {
-  background: rgba(40, 40, 50, 0.7);
-}
-
-.dark-mode #school-list .tags span {
-  background: rgba(40, 40, 50, 0.8);
-  border-color: rgba(70, 70, 80, 0.7);
-}
-
 .school-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   margin-bottom: 0.5rem;
+}
+
+.school-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.school-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.school-logo-placeholder {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: #f0f2f5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .school h2 {
@@ -288,6 +353,48 @@ export default {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: var(--primary-color);
+}
+
+/* Dark mode styles */
+.dark-mode #school-list .school {
+  background: rgba(30, 30, 35, 0.9);
+  border-color: var(--border-color);
+}
+
+.dark-mode #school-list .school.green {
+  background: linear-gradient(135deg, rgba(30, 60, 40, 0.9), rgba(30, 30, 35, 0.9));
+}
+
+.dark-mode #school-list .school.red {
+  background: linear-gradient(135deg, rgba(60, 30, 30, 0.9), rgba(30, 30, 35, 0.9));
+}
+
+.dark-mode #school-list .progress-container,
+.dark-mode #school-list .text-countdown {
+  background: rgba(40, 40, 50, 0.7);
+}
+
+.dark-mode #school-list .tags span {
+  background: rgba(40, 40, 50, 0.8);
+  border-color: rgba(70, 70, 80, 0.7);
+}
+
+.dark-mode .school-logo-placeholder {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+.dark-mode #school-list .description,
+.dark-mode #school-list p {
+  color: var(--text-color);
+}
+
+.dark-mode #school-list h2 {
+  color: var(--text-color);
+}
+
+.dark-mode #school-list a {
+  color: var(--primary-color);
 }
 
 @media screen and (max-width: 1200px) {

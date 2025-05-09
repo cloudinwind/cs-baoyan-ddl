@@ -4,8 +4,18 @@
       <HeaderComponent @source-change="onSourceChange" @toggle-countdown="onToggleCountdown"></HeaderComponent>
       <div class="main-container">
         <FiltersComponent @filter-change="onFilterChange"></FiltersComponent>
-        <SearchComponent @search="onSearch"></SearchComponent>
-        <SchoolList :schools="schools" :selectedFilters="selectedFilters" :searchQuery="searchQuery" :countdownType="countdownType" @show-details="showDetails"></SchoolList>
+        <div class="search-province-container">
+          <SearchComponent @search="onSearch"></SearchComponent>
+          <ProvinceFilterComponent @province-change="onProvinceChange"></ProvinceFilterComponent>
+        </div>
+        <SchoolList 
+          :schools="schools" 
+          :selectedFilters="selectedFilters" 
+          :selectedProvinces="selectedProvinces" 
+          :searchQuery="searchQuery" 
+          :countdownType="countdownType" 
+          @show-details="showDetails"
+        ></SchoolList>
       </div>
     </div>
     <div v-if="selectedSchool" class="overlay" @click="hideDetails"></div>
@@ -17,6 +27,7 @@
 import HeaderComponent from '../components/Header.vue';
 import FiltersComponent from '../components/Filters.vue';
 import SearchComponent from '../components/Search.vue';
+import ProvinceFilterComponent from '../components/ProvinceFilter.vue';
 import SchoolList from '../components/SchoolList.vue';
 import DetailsCard from '../components/DetailsCard.vue';
 
@@ -26,6 +37,7 @@ export default {
     HeaderComponent,
     FiltersComponent,
     SearchComponent,
+    ProvinceFilterComponent,
     SchoolList,
     DetailsCard
   },
@@ -33,6 +45,7 @@ export default {
     return {
       schools: [],
       selectedFilters: [],
+      selectedProvinces: [],
       searchQuery: '',
       currentSource: 'camp2025',
       selectedSchool: null,
@@ -55,6 +68,9 @@ export default {
     },
     onFilterChange(filters) {
       this.selectedFilters = filters;
+    },
+    onProvinceChange(provinces) {
+      this.selectedProvinces = provinces;
     },
     onSearch(query) {
       this.searchQuery = query;
@@ -116,6 +132,21 @@ export default {
   animation: fadeIn 0.3s ease forwards;
 }
 
+.search-province-container {
+  display: flex;
+  gap: 0.8rem;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .search-province-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -150,6 +181,11 @@ export default {
     padding: 1rem 5%;
     gap: 1rem;
   }
+}
+
+/* Dark mode specific styles */
+.dark-mode .container {
+  background-color: var(--secondary-color);
 }
 
 /* 添加滚动条样式 */

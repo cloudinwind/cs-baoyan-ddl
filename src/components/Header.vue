@@ -288,7 +288,41 @@ header {
 /* Dark mode style for dropdown */
 .dark-mode #dropdown-container {
   background: rgba(30, 30, 35, 0.8);
-  border-color: rgba(70, 70, 80, 0.5);
+  border-color: var(--border-color);
+}
+
+.dark-mode #source-select {
+  background-color: rgba(40, 40, 45, 0.9);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.dark-mode #source-select:hover {
+  border-color: var(--primary-color);
+}
+
+.dark-mode .intro {
+  background: rgba(30, 30, 35, 0.8);
+  border-color: var(--border-color);
+}
+
+.dark-mode .intro h1 {
+  background: rgba(40, 40, 45, 0.5);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.dark-mode .intro p {
+  color: var(--text-color);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .toggle-switch {
+  background-color: #444;
+}
+
+.dark-mode .toggle-label {
+  color: #eee;
 }
 
 @media screen and (max-width: 768px) {

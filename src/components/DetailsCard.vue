@@ -228,4 +228,30 @@ export default {
     padding: 0.75rem;
   }
 }
+
+/* Dark mode styles */
+.dark-mode .details-card {
+  background: rgba(30, 30, 35, 0.95);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.dark-mode .details-card h2,
+.dark-mode .details-card p {
+  color: var(--text-color);
+}
+
+.dark-mode .details-card a {
+  color: var(--primary-color);
+}
+
+.dark-mode .tags span {
+  background: rgba(40, 40, 45, 0.8);
+}
+
+.dark-mode .progress-container,
+.dark-mode .text-countdown {
+  background: rgba(40, 40, 50, 0.7);
+  color: var(--text-color);
+}
 </style>
