@@ -19,12 +19,14 @@ jobs:
     - name: Copy and rename data.json to public/config/schools.json
       run: |
         cp BoardCaster/data.json public/config/schools.json
+        cp BoardCaster/camp2025-by-province.json public/config/camp2025-by-province.json
 
     - name: Commit and push changes if there are any
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add public/config/schools.json
+        git add public/config/camp2025-by-province.json
         if git diff-index --quiet HEAD; then
           echo "No changes to commit"
         else
