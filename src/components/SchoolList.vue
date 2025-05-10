@@ -71,6 +71,10 @@ export default {
       );
     },
     formatDate(date) {
+      if (!date) return '未知';
+      const parsed = new Date(date);
+      if (isNaN(parsed.getTime())) return '未知';
+
       const options = {
         year: 'numeric',
         month: 'long',
@@ -79,7 +83,7 @@ export default {
         minute: '2-digit',
         hour12: false
       };
-      return new Intl.DateTimeFormat('zh-CN', options).format(date);
+      return new Intl.DateTimeFormat('zh-CN', options).format(parsed);
     },
     hashColor(str) {
       let hash = 0;
