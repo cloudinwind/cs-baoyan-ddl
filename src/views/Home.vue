@@ -4,8 +4,18 @@
       <HeaderComponent @source-change="onSourceChange" @toggle-countdown="onToggleCountdown"></HeaderComponent>
       <div class="main-container">
         <FiltersComponent @filter-change="onFilterChange"></FiltersComponent>
-        <SearchComponent @search="onSearch"></SearchComponent>
-        <SchoolList :schools="schools" :selectedFilters="selectedFilters" :searchQuery="searchQuery" :countdownType="countdownType" @show-details="showDetails"></SchoolList>
+        <div class="search-province-container">
+          <SearchComponent @search="onSearch"></SearchComponent>
+          <ProvinceFilterComponent @province-change="onProvinceChange"></ProvinceFilterComponent>
+        </div>
+        <SchoolList 
+          :schools="schools" 
+          :selectedFilters="selectedFilters" 
+          :selectedProvinces="selectedProvinces" 
+          :searchQuery="searchQuery" 
+          :countdownType="countdownType" 
+          @show-details="showDetails"
+        ></SchoolList>
       </div>
     </div>
     <div v-if="selectedSchool" class="overlay" @click="hideDetails"></div>
@@ -17,6 +27,7 @@
 import HeaderComponent from '../components/Header.vue';
 import FiltersComponent from '../components/Filters.vue';
 import SearchComponent from '../components/Search.vue';
+import ProvinceFilterComponent from '../components/ProvinceFilter.vue';
 import SchoolList from '../components/SchoolList.vue';
 import DetailsCard from '../components/DetailsCard.vue';
 
@@ -26,6 +37,7 @@ export default {
     HeaderComponent,
     FiltersComponent,
     SearchComponent,
+    ProvinceFilterComponent,
     SchoolList,
     DetailsCard
   },
@@ -33,6 +45,7 @@ export default {
     return {
       schools: [],
       selectedFilters: [],
+      selectedProvinces: [],
       searchQuery: '',
       currentSource: 'camp2025',
       selectedSchool: null,
@@ -55,6 +68,9 @@ export default {
     },
     onFilterChange(filters) {
       this.selectedFilters = filters;
+    },
+    onProvinceChange(provinces) {
+      this.selectedProvinces = provinces;
     },
     onSearch(query) {
       this.searchQuery = query;
@@ -91,15 +107,16 @@ export default {
 
 <style scoped>
 .container {
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
-  /* padding: 20px; */
   position: relative;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
 }
 
 .blur-background {
-  filter: blur(10px);
+  filter: blur(8px);
   pointer-events: none;
+  transition: var(--transition);
 }
 
 .overlay {
@@ -108,18 +125,86 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
   z-index: 999;
-  pointer-events: auto;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
 }
 
-.main-container{
-  padding: 0 18%;
+.search-province-container {
+  display: flex;
+  gap: 0.8rem;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .search-province-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-container {
+  padding: 2rem 18%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .main-container {
+    padding: 2rem 10%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-container {
+    padding: 2rem 5%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .main-container{
-    padding: 0 5%;
+  .main-container {
+    padding: 1rem 5%;
+    gap: 1rem;
   }
 }
+
+/* Dark mode specific styles */
+.dark-mode .container {
+  background-color: var(--secondary-color);
+}
+
+/* 添加滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
 </style>
+

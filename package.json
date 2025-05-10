@@ -11,6 +11,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "core-js": "^3.8.3",
+    "cs-baoyan-ddl": "file:",
     "element-plus": "^2.9.3",
     "vue": "^3.2.13"
   },

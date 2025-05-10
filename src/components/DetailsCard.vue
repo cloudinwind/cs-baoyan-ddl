@@ -103,61 +103,155 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.75);
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  box-shadow: var(--shadow);
   z-index: 1000;
-  border-radius: 15px;
+  border-radius: 20px;
   pointer-events: auto;
-  color: black;
+  color: var(--text-color);
+  max-width: 90%;
+  width: 600px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.details-card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.75rem;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.details-card p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
 .details-card a {
-  color: #007bff;
+  color: var(--primary-color);
   word-break: break-all;
   text-decoration: none;
+  transition: var(--transition);
+}
+
+.details-card a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .tags {
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 .tags span {
   display: inline-block;
-  padding: 5px;
-  margin-right: 5px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.tags span:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .progress-container {
-  margin-top: 20px;
+  margin-top: 1.5rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
 }
 
 .text-countdown {
-  font-size: 18px;
-  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
   .details-card {
-    width: 90%; /* 在手机上增加宽度 */
-    padding: 10px; /* 减少内边距以适应手机屏幕 */
-    flex-direction: column;
+    width: 95%;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .details-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .details-card p {
+    font-size: 0.875rem;
   }
 
   .progress-container {
-    flex-direction: row; /* 保持水平排列 */
-    flex-wrap: wrap; /* 允许换行以避免溢出 */
-    justify-content: center; /* 居中对齐 */
+    padding: 0.75rem;
+    gap: 0.75rem;
   }
 
-  .progress-container > * {
-    flex: 1 1 45%; /* 允许每个进度环占据大约一半宽度 */
-    margin: 5px; /* 增加间距以避免内容过于拥挤 */
+  .text-countdown {
+    font-size: 1rem;
+    padding: 0.75rem;
   }
+}
+
+/* Dark mode styles */
+.dark-mode .details-card {
+  background: rgba(30, 30, 35, 0.95);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.dark-mode .details-card h2,
+.dark-mode .details-card p {
+  color: var(--text-color);
+}
+
+.dark-mode .details-card a {
+  color: var(--primary-color);
+}
+
+.dark-mode .tags span {
+  background: rgba(40, 40, 45, 0.8);
+}
+
+.dark-mode .progress-container,
+.dark-mode .text-countdown {
+  background: rgba(40, 40, 50, 0.7);
+  color: var(--text-color);
 }
 </style>

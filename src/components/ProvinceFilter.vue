@@ -1,28 +1,15 @@
 <template>
-  <div class="filters">
+  <div class="province-filter">
     <div class="filter-group">
-      <span class="group-title">院校类型</span>
+      <span class="group-title">按省份筛选</span>
       <div class="filter-items">
         <button
-          v-for="filter in schoolFilters"
-          :key="filter"
-          :class="['tag-btn', { selected: selectedFilters.includes(filter) }]"
-          @click="toggleFilter(filter)"
+          v-for="province in provinces"
+          :key="province"
+          :class="['tag-btn', { selected: selectedProvinces.includes(province) }]"
+          @click="toggleProvince(province)"
         >
-          {{ filter }}
-        </button>
-      </div>
-    </div>
-    <div class="filter-group">
-      <span class="group-title">状态</span>
-      <div class="filter-items">
-        <button
-          v-for="filter in statusFilters"
-          :key="filter"
-          :class="['tag-btn', { selected: selectedFilters.includes(filter) }]"
-          @click="toggleFilter(filter)"
-        >
-          {{ filter }}
+          {{ province }}
         </button>
       </div>
     </div>
@@ -31,45 +18,53 @@
 
 <script>
 export default {
-  name: 'FiltersComponent',
+  name: 'ProvinceFilterComponent',
   data() {
     return {
-      schoolFilters: ['TOP2', '港三', '华五', 'C9', '985', '211', '双非', '四非', '研究院', '联培'],
-      statusFilters: ['已开营', '已结营'],
-      selectedFilters: []
+      provinces: [
+        '北京', '上海', '江苏', '浙江', '广东', 
+        '湖北', '四川', '陕西', '天津', '山东',
+        '安徽', '福建', '湖南', '黑龙江', '辽宁', 
+        '重庆', '河南', '河北', '吉林', '山西', 
+        '江西', '贵州', '云南', '广西', '新疆', 
+        '内蒙古', '甘肃', '宁夏', '青海', '西藏', 
+        '海南'
+      ],
+      selectedProvinces: []
     };
   },
   methods: {
-    toggleFilter(filter) {
-      const idx = this.selectedFilters.indexOf(filter);
+    toggleProvince(province) {
+      const idx = this.selectedProvinces.indexOf(province);
       if (idx === -1) {
-        this.selectedFilters.push(filter);
+        this.selectedProvinces.push(province);
       } else {
-        this.selectedFilters.splice(idx, 1);
+        this.selectedProvinces.splice(idx, 1);
       }
-      this.$emit('filter-change', this.selectedFilters);
+      this.$emit('province-change', this.selectedProvinces);
     }
   }
 };
 </script>
 
 <style scoped>
-.filters {
+.province-filter {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  padding: 0.8rem;
-  background: var(--secondary-color);
+  gap: 0.3rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  margin: 0.7rem 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  min-width: 200px;
+  max-width: 400px;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 
 .group-title {
@@ -82,7 +77,7 @@ export default {
 .filter-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .tag-btn {
@@ -91,8 +86,8 @@ export default {
   background: #f4f8fc;
   color: var(--text-color);
   border-radius: 20px;
-  padding: 0.35em 1em;
-  font-size: 0.85em;
+  padding: 0.25em 0.6em;
+  font-size: 0.8em;
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
@@ -117,8 +112,9 @@ export default {
   color: #fff;
 }
 
-.dark-mode .filters {
-  background: rgba(30, 30, 35, 0.9);
+/* Dark mode styles */
+.dark-mode .province-filter {
+  background: rgba(30, 30, 35, 0.5);
   border-color: var(--border-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
@@ -150,16 +146,16 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .filters {
-    padding: 0.7rem;
-    gap: 0.7rem;
+  .province-filter {
+    width: 100%;
+    max-width: none;
   }
   .filter-items {
     gap: 0.4rem;
   }
   .tag-btn {
-    font-size: 0.85em;
-    padding: 0.35em 0.9em;
+    font-size: 0.8em;
+    padding: 0.35em 0.7em;
   }
 }
-</style>
+</style> 
