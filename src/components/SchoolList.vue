@@ -71,10 +71,9 @@ export default {
       );
     },
     formatDate(date) {
-      if (!date) return '未知';
+      if (!date) return 'N/A';
       const parsed = new Date(date);
-      if (isNaN(parsed.getTime())) return '未知';
-
+      if (isNaN(parsed.getTime())) return 'N/A';
       const options = {
         year: 'numeric',
         month: 'long',
