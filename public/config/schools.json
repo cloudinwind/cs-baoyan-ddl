@@ -269,7 +269,7 @@
             "name": "中山大学",
             "institute": "软件工程学院",
             "description": "网址：https://sse.sysu.edu.cn/article/908",
-            "deadline": "2025-06-05T23:59:00+08:00",
+            "deadline": "2025-06-05:T23:59:00+08:00",
             "website": "https://sse.sysu.edu.cn/article/908",
             "tags": [
                 "985"
@@ -295,6 +295,39 @@
             "website": "https://scst.sysu.edu.cn/news/news02/1419108.htm",
             "tags": [
                 "985"
+            ],
+            "province": ""
+        },
+        {
+            "name": "浙江大学",
+            "institute": "信电学院",
+            "description": "_No response_",
+            "deadline": "2025-06-16T00:00:00+08:00",
+            "website": "http://www.isee.zju.edu.cn/2025/0515/c21109a3049527/page.htm",
+            "tags": [
+                "华五"
+            ],
+            "province": ""
+        },
+        {
+            "name": "浙江大学",
+            "institute": "集成电路学院",
+            "description": "_No response_",
+            "deadline": "2025-06-17T00:00:00",
+            "website": "https://ic.zju.edu.cn/2025/0522/c54011a3054130/page.htm",
+            "tags": [
+                "华五"
+            ],
+            "province": ""
+        },
+        {
+            "name": "哈尔滨工业大学",
+            "institute": "电子与信息学院",
+            "description": "_No response_",
+            "deadline": "2025-06-01T00:00:00",
+            "website": "https://seie.hit.edu.cn/2025/0507/c17148a369613/page.htm",
+            "tags": [
+                "C9"
             ],
             "province": ""
         }
