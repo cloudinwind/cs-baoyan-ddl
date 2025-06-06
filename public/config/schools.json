@@ -569,6 +569,62 @@
                 "研究院"
             ],
             "province": ""
+        },
+        {
+            "name": "吉林大学",
+            "institute": "软件学院",
+            "description": "- 考核成绩可以做为推免阶段的重要参考依据\n- 我院开放日活动不收取任何费用，申请人的交通和食宿自理。对于最终被学校推免录取的异地学生，学院按照财务报销规定，给予路费补贴（请提供实际发生费用票据，按火车硬座标准）",
+            "deadline": "2025-06-20T11:00:00+08:00",
+            "website": "https://csw.jlu.edu.cn/info/1156/7879.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "上海交通大学",
+            "institute": "计算机学院",
+            "description": "_No response_",
+            "deadline": "2025-06-25T00:00:00+08:00",
+            "website": "https://ga.sjtu.edu.cn/zsgl/xlygl/yxhdbfcxnr.aspx",
+            "tags": [
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京大学",
+            "institute": "智能学院",
+            "description": "北京大学智能学院将面向智能科学与技术学科的优秀大学生举办夏令营活动，活动内容主要包括学院总体概览、学科前沿报告、专题讲座、专业知识与技能测评等。",
+            "deadline": "2025-06-16T00:00:00+08:00",
+            "website": "https://sai.pku.edu.cn/info/1083/3389.htm",
+            "tags": [
+                "TOP2"
+            ],
+            "province": ""
+        },
+        {
+            "name": "吉林大学",
+            "institute": "计算机科学与技术学院",
+            "description": "_No response_",
+            "deadline": "2025-06-20T12:00:00+08:00",
+            "website": "https://ccst.jlu.edu.cn/info/1229/20419.htm",
+            "tags": [
+                "985"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国地质大学（武汉）",
+            "institute": "地理与信息工程学院",
+            "description": "我院研招校园开放日活动主要包括招生政策宣讲、学科解读、导师与学生互动交流等。活动采用线上方式",
+            "deadline": "2025-06-21T00:00:00+08:00",
+            "website": "https://xgxy.cug.edu.cn/info/1013/32730.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
