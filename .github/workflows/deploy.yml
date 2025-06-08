@@ -1,6 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
+  schedule:
+    - cron: '0 16 * * *'  # 北京时间 00:00 更新
   push:
     branches: [ main, master ]
   workflow_dispatch:
