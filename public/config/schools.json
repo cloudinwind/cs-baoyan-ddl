@@ -589,7 +589,7 @@
             "deadline": "2025-06-25T00:00:00+08:00",
             "website": "https://ga.sjtu.edu.cn/zsgl/xlygl/yxhdbfcxnr.aspx",
             "tags": [
-                "C9"
+                "华五"
             ],
             "province": ""
         },
@@ -690,6 +690,17 @@
             "website": "https://mp.weixin.qq.com/s/DCO0ZoN8AYKKxmc8r9yklg",
             "tags": [
                 "双非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "浙江大学",
+            "institute": "网络空间安全学院",
+            "description": "_No response_",
+            "deadline": "2025-6-25T00:00:00+8:00",
+            "website": "https://icsr.zju.edu.cn/2025/0530/c70144a3057299/page.htm",
+            "tags": [
+                "华五"
             ],
             "province": ""
         }
