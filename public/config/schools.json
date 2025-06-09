@@ -703,6 +703,39 @@
                 "华五"
             ],
             "province": ""
+        },
+        {
+            "name": "北京大学",
+            "institute": "软件与微电子学院",
+            "description": "_No response_",
+            "deadline": "2025-06-16T16:00:00+08:00",
+            "website": "https://www.ss.pku.edu.cn/admission/admnotice/4680.html",
+            "tags": [
+                "TOP2"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京大学",
+            "institute": "电子学院",
+            "description": "_No response_",
+            "deadline": "2025-06-18T00:00:00+08:00",
+            "website": "https://ele.pku.edu.cn/info/1063/3698.htm",
+            "tags": [
+                "TOP2"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京大学",
+            "institute": "集成电路学院",
+            "description": "_No response_",
+            "deadline": "2025-06-18T00:00:00+08:00",
+            "website": "https://ic.pku.edu.cn/rcpy/yjszs/fe8d13de71c144ddadc0ba59d283ed5d.htm",
+            "tags": [
+                "TOP2"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
