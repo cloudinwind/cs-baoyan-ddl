@@ -747,6 +747,28 @@
                 "985"
             ],
             "province": ""
+        },
+        {
+            "name": "复旦大学",
+            "institute": "大数据学院",
+            "description": "6月15日10:00开始报名",
+            "deadline": "2025-07-05T17:00:00+08:00",
+            "website": "https://sds.fudan.edu.cn/3d/23/c17701a736547/page.htm",
+            "tags": [
+                "华五"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京师范大学",
+            "institute": "未来教育学院",
+            "description": "学不下去cs就来当老师吧（",
+            "deadline": "2025-06-20T23:59:59+08:00",
+            "website": "https://mp.weixin.qq.com/s/Fgi42hjorlwmEYtwyNRQ4w",
+            "tags": [
+                "985"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
