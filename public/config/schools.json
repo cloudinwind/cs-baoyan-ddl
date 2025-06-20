@@ -1231,6 +1231,31 @@
                 "211"
             ],
             "province": ""
+        },
+        {
+            "name": "深圳大学",
+            "institute": "人工智能学院",
+            "description": "1.学生全勤并提交一份合格的科研报告可获得结业证书。2.学院统一安排暑期学校期间食宿。",
+            "deadline": "2025-07-08T21:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/P_kfeO4r2kGIhMbw0cyhDQ",
+            "tags": [
+                "四非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "浙江大学",
+            "institute": "数据科学研究中心",
+            "description": "“数据科学与工程硕士”项目\n欢迎电子信息、统计学、计算机、数学、经济学、管理学、生命科学、医学等相关专业学生报名",
+            "deadline": "2025-06-28T23:59:00+08:00",
+            "website": "http://cds.zju.edu.cn/a/zsxx/3668.html",
+            "tags": [
+                "985",
+                "211",
+                "C9",
+                "华五"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
