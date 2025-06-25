@@ -249,9 +249,12 @@
             "name": "南京大学",
             "institute": "智能科学与技术学院",
             "description": "_No response_",
-            "deadline": "2025-06-08T17:00:00+08:00",
-            "website": "https://mp.weixin.qq.com/s/1Jdyfcag_Hr1LcA5EnlEsA",
+            "deadline": "2025-07-10T17:00:00+08:00",
+            "website": "https://is.nju.edu.cn/b4/31/c57160a767025/page.htm",
             "tags": [
+                "C9",
+                "985",
+                "211",
                 "华五"
             ],
             "province": ""
@@ -1402,6 +1405,17 @@
             "website": "https://gd.bistu.edu.cn/tzgg/e950a3a75b41403eaa5e678656e7b04c.htm",
             "tags": [
                 "四非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "南京大学",
+            "institute": "人工智能学院",
+            "description": "_No response_",
+            "deadline": "2025-07-15T00:09:00+08:00",
+            "website": "https://ai.nju.edu.cn/b3/f5/c53055a766965/page.htm",
+            "tags": [
+                "华五"
             ],
             "province": ""
         }
