@@ -1712,6 +1712,158 @@
                 "211"
             ],
             "province": ""
+        },
+        {
+            "name": "华东理工大学",
+            "institute": "卓越工程师学院",
+            "description": "线下遴选50人",
+            "deadline": "2025-07-04T12:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/i2gZZwALYl33Cl2IIMa6Eg",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东北大学",
+            "institute": "机器人科学与工程学院",
+            "description": "线下外校不超30人",
+            "deadline": "2025-07-05T12:00:00+08:00",
+            "website": "http://www.rse.neu.edu.cn/2025/0701/c2147a288720/page.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东北大学",
+            "institute": "计算机科学与工程学院",
+            "description": "线下外校不超60人",
+            "deadline": "2025-07-04T08:00:00+08:00",
+            "website": "http://www.cse.neu.edu.cn/2025/0701/c6274a288690/page.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东南大学",
+            "institute": "生物科学与医学工程学院",
+            "description": "BME",
+            "deadline": "2025-07-31T12:00:00+08:00",
+            "website": "https://bme.seu.edu.cn/2025/0630/c480a534639/page.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京邮电大学",
+            "institute": "信息与通信工程学院",
+            "description": "夏令营活动通过线上线下相结合方式开展，以招生导师组为单位进行，详见第四部分各招生导师组场次安排",
+            "deadline": "2025-07-15T00:00:00+08:00",
+            "website": "https://sice.bupt.edu.cn/info/1042/2509.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国科学院计算技术研究所",
+            "institute": "中国科学院计算技术研究所",
+            "description": "### 报名截止日期\n\n2025-07-09T15:00:00+08:00",
+            "deadline": "2025-07-09T15:00:00+08:00",
+            "website": "https://ict.cas.cn/xwgg/tzgg/202506/t20250630_7876973.html",
+            "tags": [
+                "研究院",
+                "双非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京邮电大学",
+            "institute": "集成电路学院",
+            "description": "https://ic.bupt.edu.cn/info/1024/1576.htm",
+            "deadline": "2025-07-10T00:00:00+08:00",
+            "website": "https://ic.bupt.edu.cn/info/1024/1576.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "电子科技大学",
+            "institute": "深圳高等研究院",
+            "description": "7月9日-7月10日暑期夏令营开营仪式，高研院介绍、专业介绍，学术讲座、高研院团队介绍",
+            "deadline": "2025-07-09T00:00:00+08:00",
+            "website": "https://sias.uestc.edu.cn/info/1235/5741.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京建筑大学",
+            "institute": "智能科学与技术学院",
+            "description": ".本次夏令营不收取报名费用，如果选择现场参营方式，交通、食宿等敬请自理",
+            "deadline": "2025-07-10T00:00:00+08:00",
+            "website": "https://dxxy.bucea.edu.cn/sylm/tzgg/208b11ea5c7b4c369a5baea2ccc38f56.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "西北工业大学",
+            "institute": "软件学院",
+            "description": "“双一流”院校 2026 届本科生或其他高校2026届本科生前6学期或5学期成绩平均学分积（或学分绩点）专业排名前1%",
+            "deadline": "2025-07-06T21:00:00+08:00",
+            "website": "https://ruanjian.nwpu.edu.cn/info/1004/13316.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "西北工业大学",
+            "institute": "网络空间安全学院",
+            "description": "线上组织学院及学科介绍、学术讲座",
+            "deadline": "2025-07-06T21:00:00+08:00",
+            "website": "https://wlkjaqxy.nwpu.edu.cn/info/1103/13630.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "西北工业大学",
+            "institute": "光电智能研究院",
+            "description": "_No response_",
+            "deadline": "2025-07-06T21:00:00+08:00",
+            "website": "https://iopen.nwpu.edu.cn/info/1051/6896.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东北大学",
+            "institute": "信息科学与工程学院",
+            "description": "线下外校不超过40人",
+            "deadline": "2025-07-04T00:00:00+08:00",
+            "website": "http://www.ise.neu.edu.cn/2025/0630/c157a288658/page.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
