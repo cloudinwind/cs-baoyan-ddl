@@ -1910,6 +1910,55 @@
                 "211"
             ],
             "province": ""
+        },
+        {
+            "name": "国防科技大学",
+            "institute": "智能科学学院",
+            "description": "本科前2.5年综合成绩在本专业排名：原则上符合原“一流大学”建设高校（教育部第一轮公布的42所）前30%，其他“双一流”建设高校（教育部第二轮公布）前15%，其他具有推免资格普通高校前5%（或专业前2名）",
+            "deadline": "2025-07-08T19:00:00+08:00",
+            "website": "http://yjszs.nudt.edu.cn/pubweb/homePageList/newDetailed.view?keyId=14508",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "南京大学",
+            "institute": "匡亚明学院",
+            "description": "学院导师简介如下：https://dii.nju.edu.cn/lsjs/list.htm；导师的代表性研究论文如下：https://box.nju.edu.cn/d/2da280d72ae24bce9167/。请选择至少两篇论文，分别撰写不少于2000字/篇的阅读笔记。内容包括但不限于：①论文的研究背景、研究方法和关键结论；②对论文相关内容开展后续研究的思考",
+            "deadline": "2025-07-23T00:00:00+08:00",
+            "website": "https://dii.nju.edu.cn/b8/d3/c11317a768211/page.htm",
+            "tags": [
+                "985",
+                "211",
+                "华五",
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国人民大学",
+            "institute": "智慧治理学院",
+            "description": "现场考核包括面试、笔试两部分。面试重点考查考生综合素质，突出对考生创新思维、学术潜质、思想政治素质和品德的考查。笔试包含两个科目，其中科目一为专业素质，考查专业素质和能力；科目二为综合素质及外语能力",
+            "deadline": "2025-07-10T10:00:00+08:00",
+            "website": "http://su.ruc.edu.cn/notices_list/notices/54e08c26f4e740f088a89c4b4e521597.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "首都医科大学",
+            "institute": "生物医学工程学院",
+            "description": "生物医学工程10人，电子信息技术4人",
+            "deadline": "2025-07-04T10:00:00+08:00",
+            "website": "https://yjsh.ccmu.edu.cn/yytz_2977/zs_3101/e0f0a819dbad44cc882bcaeea7533141.htm",
+            "tags": [
+                "四非"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
