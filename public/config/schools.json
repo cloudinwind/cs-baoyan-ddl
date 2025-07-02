@@ -1959,6 +1959,83 @@
                 "四非"
             ],
             "province": ""
+        },
+        {
+            "name": "清华大学",
+            "institute": "SIGS海洋工程研究院",
+            "description": "_No response_",
+            "deadline": "2025-07-28T12:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/2EDTGCsUM23aqduU691Swg",
+            "tags": [
+                "985",
+                "211",
+                "TOP2",
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "国防科技大学",
+            "institute": "前沿交叉学科学院",
+            "description": "_No response_",
+            "deadline": "2025-07-12T00:00:00+08:00",
+            "website": "http://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14509",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "上海交通大学",
+            "institute": "溥渊未来技术学院",
+            "description": "一般应为“双一流”建设高校或“双一流”建设相关专业的本科三年级在校生（2026年应届本科毕业生）",
+            "deadline": "2025-07-10T17:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/qQHFrgrcz5znqfFgcamTGw",
+            "tags": [
+                "985",
+                "211",
+                "华五",
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "复旦大学",
+            "institute": "空间互联网研究院",
+            "description": "第二波！复旦大学空间互联网研究院 2025年全国优秀大学生夏令营报名通知（计算机科学与技术方向）",
+            "deadline": "2025-07-20T17:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/r5xi0vsceb8L6l2V5wth0Q",
+            "tags": [
+                "985",
+                "211",
+                "华五",
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "国防科技大学",
+            "institute": "气象海洋学院",
+            "description": "_No response_",
+            "deadline": "2025-07-12T00:00:00+08:00",
+            "website": "http://yjszs.nudt.edu.cn/pubweb/homePageList/newDetailed.view?keyId=14502",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京科技大学",
+            "institute": "计算机与通信工程学院",
+            "description": "本次活动预计接收200人参加，其中校内约120人，校外80人。校外参会人员由组织方统一负责7月11日晚的酒店住宿安排与7月12日午餐、晚餐安排",
+            "deadline": "2025-07-05T23:59:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/VMzBqqZTSq8FD_hAcNfwEA",
+            "tags": [
+                "211"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
