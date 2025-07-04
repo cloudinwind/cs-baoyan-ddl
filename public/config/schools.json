@@ -1693,9 +1693,9 @@
         {
             "name": "中南大学",
             "institute": "计算机学院",
-            "description": "40人国际暑期学校",
-            "deadline": "2025-08-01T00:00:00+08:00",
-            "website": "https://mp.weixin.qq.com/s/Itg2xp7C2C8IN0vJMNxj3w",
+            "description": "线上",
+            "deadline": "2025-07-13T00:00:00+08:00",
+            "website": "https://cse.csu.edu.cn/info/1040/10578.htm",
             "tags": [
                 "985",
                 "211"
@@ -2043,6 +2043,86 @@
             "description": "_No response_",
             "deadline": "2025-07-10T00:00:00+08:00",
             "website": "http://yjszs.nudt.edu.cn/pubweb/homePageList/newDetailed.view?keyId=14506",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东华大学",
+            "institute": "计算机科学与技术学院",
+            "description": "本次夏令营计划招收营员50名左右，将于2025年7月15日线下举行。夏令营活动包括计算机学科前沿学术报告、招生宣讲等。热烈欢迎有志于我院深造的同学报名参加。",
+            "deadline": "2025-07-07T16:00:00+08:00",
+            "website": "https://cst.dhu.edu.cn/2025/0703/c12723a363566/page.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "国防科技大学",
+            "institute": "计算机学院",
+            "description": "为参加线下活动的营员免费提供讲义、文具等学习资料和用品，免收学杂费，按标准提供免费食宿。最终推免录取为计算机学院研究生的营员按不超过高铁二等座标准提供往返交通补助。",
+            "deadline": "2025-07-11T00:00:00+08:00",
+            "website": "http://yjszs.nudt.edu.cn/pubweb/homePageList/detailed.view?keyId=14505",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国人民解放军军事科学院",
+            "institute": "军事科学院",
+            "description": "我院负责研学学员的食宿（2人1间），并对全程参加研学活动学员的差旅费予以补助，补助标准为：京外学员可在不超过飞机经济舱或高铁二等座或普通火车硬座、硬卧标准内报销往返路费，且往返差旅费超出1000元的补助标准统一为1000元，超出部分由学生自行负担；低于1000元的按照票面实际价格进行核销；京内学员不予补助。\n专业方向为：生物学、控制科学与工程、计算机科学与技术、土木工程、航空宇航科学与技术、兵器科学与技术、核科学与技术、生物医学工程、兽医学、基础医学、公共卫生与预防医学、药学等专业相关本科专业。",
+            "deadline": "2025-07-09T18:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/AtDgHkAHsccV9PHf0-89sg",
+            "tags": [
+                "四非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国民用航空飞行学院",
+            "institute": "空中交通管理学院",
+            "description": "线上线下相结合方式\n交通运输类、电子信息类、计算机类、通信类等的2026届本科毕业生",
+            "deadline": "2025-07-05T00:00:00+08:00",
+            "website": "https://mp.weixin.qq.com/s/xWdGi0A3XYKyCLN3S8bgJg",
+            "tags": [
+                "四非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "天津大学",
+            "institute": "福州国际联合学院",
+            "description": "开营时间为8月12日-13日（暂定），以后续通知为准，招生计划为80-100人左右。",
+            "deadline": "2025-08-01T00:00:00+08:00",
+            "website": "https://fz.tju.edu.cn/info/1029/2214.htm",
+            "tags": [
+                "985",
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "北京邮电大学",
+            "institute": "网络空间安全学院",
+            "description": "入营申请需选择意向招生团队的研究方向（有意向导师可填写导师姓名，无意向导师可不填），最多可报我院3个招生团队志愿。北京邮电大学网络空间安全学院导师介绍，导师联系方式、研究方向，详见学院主页—师资队伍—教师名录。\n\n学院将组织专家对申请人提交的材料进行审查，并确定各招生团队入营名单，7月7日—7月11日期间，学生须再次登陆系统查看入营资格，已入营学生需在系统中确认是否参营。",
+            "deadline": "2025-07-09T00:00:00+08:00",
+            "website": "https://scss.bupt.edu.cn/info/1110/6022.htm",
+            "tags": [
+                "211"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中南大学",
+            "institute": "电子信息学院",
+            "description": "_No response_",
+            "deadline": "2025-07-26T00:00:00+08:00",
+            "website": "https://ei.csu.edu.cn/info/1085/1924.htm",
             "tags": [
                 "985",
                 "211"
