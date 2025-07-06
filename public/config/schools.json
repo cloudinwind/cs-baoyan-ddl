@@ -2128,6 +2128,43 @@
                 "211"
             ],
             "province": ""
+        },
+        {
+            "name": "哈尔滨工业大学（威海）",
+            "institute": "计算机科学与技术学院",
+            "description": "第一批：2025年7月8日\n\n第二批：2025年9月8日\n\n第三批：2025年9月22日",
+            "deadline": "2025-09-23T00:00:00+08:00",
+            "website": "https://cst.hitwh.edu.cn/2025/0704/c371a202032/page.htm",
+            "tags": [
+                "985",
+                "211",
+                "C9"
+            ],
+            "province": ""
+        },
+        {
+            "name": "中国科学院大学",
+            "institute": "人工智能学院",
+            "description": "请符合报名要求的考生将电子版的申请材料发送到拟报考导师或课题组的相应电子邮箱， 并在中国科学院大学推免申请系统进行报名",
+            "deadline": "2025-09-29T00:00:00+08:00",
+            "website": "https://ai.ucas.ac.cn/index.php/zh-cn/tzgg/7535-2026-2",
+            "tags": [
+                "四非"
+            ],
+            "province": ""
+        },
+        {
+            "name": "东南大学",
+            "institute": "蒙纳士大学（Monash University）苏州联合研究生院",
+            "description": "一年6.2",
+            "deadline": "2025-08-02T00:00:00+08:00",
+            "website": "https://smjgs.seu.edu.cn/2025/0704/c8471a534961/page.htm",
+            "tags": [
+                "985",
+                "211",
+                "联培"
+            ],
+            "province": ""
         }
     ],
     "camp2024": [
